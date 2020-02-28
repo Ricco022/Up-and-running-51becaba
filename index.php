@@ -14,12 +14,11 @@
         $conn = new PDO("mysql:host=$servername;dbname=netland", $username, $password);
 
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "connected to the db 'netland' with version:", $conn->query('select version()')->fetchColumn();;
+        echo "connected to the db 'netland' with version:". $conn->query('select version()')->fetchColumn();
     }
     catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     }
-
     ?>
 
 
